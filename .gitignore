@@ -1,0 +1,15 @@
+# *.cs
+# *.xsd
+# *.csproj
+# *.xss
+# *.xsc
+*.htm
+*.sln
+# *.config
+packages
+bin
+obj
+# *.resx
+*.settings
+SqlServerTypes
+Properties

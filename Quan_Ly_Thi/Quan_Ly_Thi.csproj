@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DEFD0026-A524-49C4-B139-8A1AEDB102EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Quan_Ly_Thi</RootNamespace>
+    <AssemblyName>Quan_Ly_Thi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="SplashScreen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SplashScreen.Winforms.1.0.0\lib\SplashScreen.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\BUS_Admin.cs" />
+    <Compile Include="BUS\Bus_Cau_Hoi.cs" />
+    <Compile Include="BUS\BUS_De_Thi.cs" />
+    <Compile Include="BUS\BUS_Giao_Vien.cs" />
+    <Compile Include="BUS\BUS_Hoc_Sinh.cs" />
+    <Compile Include="BUS\BUS_Tai_Khoan.cs" />
+    <Compile Include="DAO\DAO_Admin.cs" />
+    <Compile Include="DAO\DAO_Cau_Hoi.cs" />
+    <Compile Include="DAO\DAO_De_Thi.cs" />
+    <Compile Include="DAO\DAO_Giao_Vien.cs" />
+    <Compile Include="DAO\DAO_Hoc_Sinh.cs" />
+    <Compile Include="DAO\DAO_Tai_Khoan.cs" />
+    <Compile Include="DAO\QLTTN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTTN.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Adminn.cs" />
+    <Compile Include="DTO\CauTraLoi.cs" />
+    <Compile Include="DTO\Cau_Hoi.cs" />
+    <Compile Include="DTO\Classes.cs" />
+    <Compile Include="DTO\DanhSachKetQua.cs" />
+    <Compile Include="DTO\DanhSachKyThi.cs" />
+    <Compile Include="DTO\DataParameter.cs" />
+    <Compile Include="DTO\De_thi.cs" />
+    <Compile Include="DTO\Giao_Vienn.cs" />
+    <Compile Include="DTO\Grades.cs" />
+    <Compile Include="DTO\Hoc_Sinhh.cs" />
+    <Compile Include="DTO\Ket_Qua_Thi.cs" />
+    <Compile Include="DTO\Lich_Thi.cs" />
+    <Compile Include="DTO\ReportDanhSachThiSinh.cs" />
+    <Compile Include="DTO\ReportTongKetKyThi.cs" />
+    <Compile Include="DTO\Tai_khoan.cs" />
+    <Compile Include="DTO\UserRevenue.cs" />
+    <Compile Include="GUI\Adminn\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Adminn\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Adminn\frmUserReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Adminn\frmUserReport.Designer.cs">
+      <DependentUpon>frmUserReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Adminn\Models\Decentralization.cs" />
+    <Compile Include="GUI\Adminn\Presenters\MainPresent.cs" />
+    <Compile Include="GUI\Adminn\Views\IUserReportView.cs" />
+    <Compile Include="GUI\Giao_Vien\frmGiao_Vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Giao_Vien\frmGiao_Vien.Designer.cs">
+      <DependentUpon>frmGiao_Vien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmDang_Nhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmDang_Nhap.Designer.cs">
+      <DependentUpon>frmDang_Nhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmDoi_Mat_Khau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmDoi_Mat_Khau.Designer.cs">
+      <DependentUpon>frmDoi_Mat_Khau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmThong_Tin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\He_Thong\frmThong_Tin.Designer.cs">
+      <DependentUpon>frmThong_Tin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmChonDeOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmChonDeOn.Designer.cs">
+      <DependentUpon>frmChonDeOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmChon_Bai_Thi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmChon_Bai_Thi.Designer.cs">
+      <DependentUpon>frmChon_Bai_Thi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmDap_An.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmDap_An.Designer.cs">
+      <DependentUpon>frmDap_An.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmHoc_Sinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmHoc_Sinh.Designer.cs">
+      <DependentUpon>frmHoc_Sinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmKetQua.Designer.cs">
+      <DependentUpon>frmKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmThong_Tin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\frmThong_Tin.Designer.cs">
+      <DependentUpon>frmThong_Tin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\Report_Viewer\De_On.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\Report_Viewer\De_On.Designer.cs">
+      <DependentUpon>De_On.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\Report_Viewer\PhieuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Hoc_Sinh\Report_Viewer\PhieuDiem.Designer.cs">
+      <DependentUpon>PhieuDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyThiTracNghiemDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThiTracNghiemDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Validator\BaseValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\DateValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\RegexValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="GUI\Adminn\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Adminn\frmUserReport.resx">
+      <DependentUpon>frmUserReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Adminn\Reports\ReportUserRevenue.rdlc" />
+    <EmbeddedResource Include="GUI\Giao_Vien\frmGiao_Vien.resx">
+      <DependentUpon>frmGiao_Vien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\He_Thong\frmDang_Nhap.resx">
+      <DependentUpon>frmDang_Nhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\He_Thong\frmDoi_Mat_Khau.resx">
+      <DependentUpon>frmDoi_Mat_Khau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\He_Thong\frmThong_Tin.resx">
+      <DependentUpon>frmThong_Tin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmChonDeOn.resx">
+      <DependentUpon>frmChonDeOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmChon_Bai_Thi.resx">
+      <DependentUpon>frmChon_Bai_Thi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmDap_An.resx">
+      <DependentUpon>frmDap_An.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmHoc_Sinh.resx">
+      <DependentUpon>frmHoc_Sinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmKetQua.resx">
+      <DependentUpon>frmKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\frmThong_Tin.resx">
+      <DependentUpon>frmThong_Tin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\Report_Viewer\DeOn.rdlc" />
+    <EmbeddedResource Include="GUI\Hoc_Sinh\Report_Viewer\De_On.resx">
+      <DependentUpon>De_On.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hoc_Sinh\Report_Viewer\PhieuDiem.rdlc" />
+    <EmbeddedResource Include="GUI\Hoc_Sinh\Report_Viewer\PhieuDiem.resx">
+      <DependentUpon>PhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DAO\QLTTN.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLTTN.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAO\QLTTN.dbml.layout">
+      <DependentUpon>QLTTN.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.CAUHOI.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.DAO_De_Thi.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.DETHI.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.KETQUATHI.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.KYTHI.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.MONHOC.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.NGUOIDUNG.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DAO.QLTTNDataContext.datasource" />
+    <None Include="Properties\DataSources\Quan_Ly_Thi.DTO.UserRevenue.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QuanLyThiTracNghiemDBDataSet2.xsc">
+      <DependentUpon>QuanLyThiTracNghiemDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyThiTracNghiemDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyThiTracNghiemDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyThiTracNghiemDBDataSet2.xss">
+      <DependentUpon>QuanLyThiTracNghiemDBDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
